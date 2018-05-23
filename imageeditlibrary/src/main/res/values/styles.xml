@@ -1,0 +1,11 @@
+<resources>
+    <style name="popwin_anim_style">
+        <item name="android:windowEnterAnimation">@anim/menushow</item>
+        <item name="android:windowExitAnimation">@anim/menuhide</item>
+    </style>
+
+    <style name="BottomPopAnim" parent="@android:style/Animation.Activity">
+        <item name="android:windowEnterAnimation">@anim/bottom_in</item>
+        <item name="android:windowExitAnimation">@anim/bottom_out</item>
+    </style>
+</resources>

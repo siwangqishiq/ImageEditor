@@ -1,0 +1,164 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/maker_bg">
+
+    <RelativeLayout
+        android:id="@+id/rl_title"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/white">
+
+        <LinearLayout
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_chevron_left"/>
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/btn_next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="17dp"
+            android:textColor="#000000"
+            android:textSize="14sp"
+            android:text="下一步" />
+
+    </RelativeLayout>
+
+    <FrameLayout
+        android:id="@+id/work_space"
+        android:layout_width="match_parent"
+        android:layout_height="320dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@color/white"
+        android:layout_below="@+id/rl_title">
+
+        <com.xinlan.imageeditlibrary.editimage.view.imagezoom.ImageViewTouch
+            android:id="@+id/main_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center" />
+
+        <com.xinlan.imageeditlibrary.editimage.view.StickerView
+            android:id="@+id/sticker_panel"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:visibility="gone" />
+
+
+        <com.xinlan.imageeditlibrary.editimage.view.TextStickerView
+            android:id="@+id/text_sticker_panel"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:visibility="gone" />
+
+        <com.xinlan.imageeditlibrary.editimage.view.CustomPaintView
+            android:id="@+id/custom_paint_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:visibility="gone" />
+    </FrameLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:orientation="horizontal"
+        android:layout_below="@+id/work_space"
+        android:gravity="center_vertical">
+        
+        <TextView
+            android:layout_width="92dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/text_white_bg"
+            android:textSize="12sp"
+            android:textColor="#9c9c9c"
+            android:gravity="center"
+            android:text="保存到草稿箱"/>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
+
+        <LinearLayout
+            android:layout_width="148dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="10dp"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:background="@drawable/text_white_bg">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20dp"
+                android:textSize="12sp"
+                android:textColor="#9c9c9c"
+                android:text="撤销"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20dp"
+                android:textSize="12sp"
+                android:textColor="#9c9c9c"
+                android:text="前进"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:textColor="#9c9c9c"
+                android:text="删除"/>
+
+        </LinearLayout>
+        
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="170dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white"
+        android:orientation="vertical">
+        <android.support.design.widget.TabLayout
+            android:id="@+id/tab_choice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:tabMode="scrollable"
+            app:tabTextColor="#686868"
+            app:tabSelectedTextColor="#000000"
+            app:tabIndicatorHeight="0dp"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#dddddd"/>
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/vp_choice"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </LinearLayout>
+
+</RelativeLayout>
