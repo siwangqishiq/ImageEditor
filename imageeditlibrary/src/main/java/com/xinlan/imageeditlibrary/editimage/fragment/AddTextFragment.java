@@ -102,11 +102,13 @@ public class AddTextFragment extends BaseEditFragment implements TextWatcher, On
         llTextInput = mainView.findViewById(R.id.ll_input);
         llSelectColor = mainView.findViewById(R.id.ll_select_color);
         llSelectFont = mainView.findViewById(R.id.ll_select_font);
-        etTextInput = mainView.findViewById(R.id.et_temp);
+        //etTextInput = mainView.findViewById(R.id.et_temp);
 
         tvConfirm = textPopup.findViewById(R.id.tv_confirm);
         tvRecommentText = textPopup.findViewById(R.id.tv_recommend);
         rvHotText = textPopup.findViewById(R.id.rv_hot_text);
+        etTextInput = textPopup.findViewById(R.id.et_input);
+
         llSelectFont.setOnClickListener(this);
         llSelectColor.setOnClickListener(this);
         llTextInput.setOnClickListener(this);
@@ -116,7 +118,7 @@ public class AddTextFragment extends BaseEditFragment implements TextWatcher, On
         mColorPicker = new ColorPicker(getActivity(), 255, 0, 0);
         etTextInput.addTextChangedListener(this);
         mTextStickerView.setEditText(etTextInput);
-        mTextStickerView.setTextColor(Color.WHITE);
+        mTextStickerView.setTextColor(Color.BLACK);
     }
 
     @Override
@@ -144,6 +146,7 @@ public class AddTextFragment extends BaseEditFragment implements TextWatcher, On
 
         } else if (id == R.id.ll_input) {
             textPopup.showAtAnchorView(mainView, YGravity.ALIGN_BOTTOM, YGravity.CENTER);
+            onShow();
         } else if (id == R.id.tv_confirm) {
 
         } else if (id == R.id.tv_recommend) {
@@ -220,7 +223,7 @@ public class AddTextFragment extends BaseEditFragment implements TextWatcher, On
 
     @Override
     public void onShow() {
-
+        mTextStickerView.resetView();
     }
 
     @Override
